@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PGSchemaFlow
 
-## Getting Started
+![PGSchemaGlow](https://img.shields.io/badge/Status-Beta-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-First, run the development server:
+**Opensource PG Database Toolkit**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+A powerful, local-first visual schema designer for PostgreSQL. Built with **Next.js**, **React Flow**, and **PGlite**, it allows you to design, visualize, and test your database schemas entirely in the browser without any backend dependencies.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🎨 Visual Editor
+-   **Interactive Canvas**: Infinite canvas to arrange tables with drag-and-drop.
+-   **Crow's Foot Notation**: Visualize one-to-many relationships clearly.
+-   **Auto-Layout**: Instantly organize messy diagrams with a single click.
+-   **Minimap & Zoom**: Navigate large schemas with ease.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🛠️ Schema Management
+-   **Visual Table Management**: Add, rename, duplicate, and delete tables.
+-   **Column Editor**:
+    -   Support for all standard PostgreSQL types (UUID, JSONB, Arrays, etc.).
+    -   Drag-and-drop column reordering.
+    -   Quick inline column addition.
+    -   Toggle Primary Key, Unique, and Nullable constraints.
+-   **Enums**: Create and manage reusable custom Enum types.
 
-## Learn More
+### ⚡ Powered by PGlite & SQL
+-   **Real-time SQL Generation**: Instantly see the `CREATE TABLE` SQL for your schema.
+-   **Local Execution**: Verify your schema runs correctly against an in-memory Postgres database (PGlite).
+-   **Import/Export**:
+    -   **Export SQL**: Download production-ready `.sql` migration files.
+    -   **Import SQL**: Reverse-engineer existing schemas by pasting `CREATE TABLE` statements.
+    -   **Save/Load**: Persist projects to local storage or export as JSON.
 
-To learn more about Next.js, take a look at the following resources:
+### 📂 Project Management
+-   **Multiple Projects**: Manage multiple independent schema designs.
+-   **Search & Sort**: Quickly find projects by name or modification date.
+-   **History**: Full Undo/Redo support for peace of mind.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🌗 UI/UX
+-   **Dark Mode**: First-class dark theme support.
+-   **Responsive**: Optimized for various screen sizes.
+-   **Collapsible Panels**: Maximize your workspace.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequisites
+-   Node.js 18+
+-   npm or pnpm
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/yourusername/postgres-schema-designer.git
+    cd postgres-schema-designer
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    # or
+    pnpm install
+    ```
+
+3.  **Run the development server**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Open in Browser**
+    Navigate to [http://localhost:3000](http://localhost:3000) to start designing!
+
+---
+
+## 📖 Usage Guide
+
+### Creating a New Table
+Click the **"Add Table"** button in the header or right-click anywhere on the canvas and select **"Add Table"**.
+
+### Adding Columns
+1.  Select a table node.
+2.  Use the **Properties Panel** on the right to add columns.
+3.  Alternatively, click the **`+`** button at the bottom of the table node for quick inline addition.
+
+### Creating Relationships
+Drag from a handle (dot) on a source column (Foreign Key) to a target column (Primary Key) to create a relationship. The UI will validate compatibility (e.g., ensuring types match).
+
+### Exporting SQL
+1.  Open the **"SQL Preview"** panel (top-right).
+2.  Click **"Copy SQL"** to copy to clipboard or use the **"Export / Import"** menu in the header to download a `.sql` file.
+
+---
+
+## 🛠️ Tech Stack
+
+-   **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+-   **Visualization**: [React Flow](https://reactflow.dev/)
+-   **Database Engine**: [PGlite](https://pglite.dev/) (Postgres in WASM)
+-   **State Management**: [Zustand](https://github.com/pmndrs/zustand)
+-   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+-   **Icons**: [Lucide React](https://lucide.dev/)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1.  Fork the project
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
