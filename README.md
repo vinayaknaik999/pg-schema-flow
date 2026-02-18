@@ -54,8 +54,8 @@ A powerful, local-first visual schema designer for PostgreSQL. Built with **Next
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/yourusername/postgres-schema-designer.git
-    cd postgres-schema-designer
+    git clone https://github.com/vinayaknaik999/pg-schema-flow.git
+    cd pg-schema-flow
     ```
 
 2.  **Install dependencies**
